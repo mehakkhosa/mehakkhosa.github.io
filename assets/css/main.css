@@ -3019,8 +3019,10 @@ input, select, textarea {
 			border-right: 0;
 		}
 
-		table td {
-			padding: 0.75rem 0.75rem;
+		td {
+			padding: 10px;
+			text-align: left;
+			white-space: nowrap;
 		}
 
 		table th {
@@ -4691,17 +4693,31 @@ input, select, textarea {
 	}
 	.about-container {
 		display: flex;
-		gap: 50px; /* Space between image and text */
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: left;
 	}
 	
 	.about-image {
-		width: 2500px; /* Adjust the image size */
-		height: 90px; /* Keep aspect ratio */
-		border-radius: 90px; /* Optional: adds rounded corners */
+		flex: 1;
+		min-width: 250px;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	.about-container img {
+		max-width: 350px;
+		height: 350px;
 	}
 	
-	.about-text {
-		width: auto; /* Adjust width */
-		height: auto;
+	.text-container {
+		flex: 2;
+		min-width: 250px;
+		padding: 20px;
+	}
+	@media screen and (max-width: 768px) {
+		.about-container {
+			flex-direction: column;
+			text-align: center;
+		}
 	}
 	
